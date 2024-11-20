@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center mt-3">Tambah Produk</h1>
+        <h1 class="text-center mt-3">Tambah Produk halaman create</h1>
 
         <a class="btn btn btn-success mb-3" href="{{ route('crudbasic.index') }}">Kembali</a>
 
