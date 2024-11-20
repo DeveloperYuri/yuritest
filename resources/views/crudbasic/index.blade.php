@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center mt-3 mb-4">CRUD BASIC test colaborate github</h1>
+        <h1 class="text-center mt-3 mb-4">CRUD BASIC test colaborate github edit</h1>
 
         <a class="btn btn btn-primary mb-3" href="{{ route('crudbasic.create')}}">Tambah Produk</a>
 
