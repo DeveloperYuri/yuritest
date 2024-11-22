@@ -22,3 +22,4 @@ Route::get('/slug/create', [HomeControllerSlug::class, 'create'])->name('slug.cr
 Route::post('/slug', [HomeControllerSlug::class, 'store'])->name('slug.store');
 Route::get('/slug/{id}/edit', [HomeControllerSlug::class, 'update'])->name('slug.update');
 Route::delete('/slug/delete/{id}', [HomeControllerSlug::class, 'destroy'])->name('slug.destroy');
+Route::get('/slug/show/{id}', [HomeControllerSlug::class, 'show'])->name('slug.show');
