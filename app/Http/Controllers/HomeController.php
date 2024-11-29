@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -49,4 +50,14 @@ class HomeController extends Controller
  
         return redirect()->route('crudbasic.index');
     }
+
+    public function show(string $id): View
+    {
+        //get product by ID
+        $produks = Produk::findOrFail($id);
+
+        //render view with product
+        return view('crudbasic.show', compact('produks'));
+    }
+
 }

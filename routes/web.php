@@ -15,6 +15,7 @@ Route::post('/storesave', [HomeController::class, 'store'])->name('crudbasic.sto
 Route::delete('/produk/delete{id}', [HomeController::class, 'destroy'])->name('crudbasic.destroy');
 Route::get('/produk/edit{id}', [HomeController::class, 'edit'])->name('crudbasic.edit');
 Route::put('/produk/update{id}', [HomeController::class, 'update'])->name('crudbasic.update');
+Route::get('/produk/show/{id}', [HomeController::class, 'show'])->name('crudbasic.show');
 
 //CRUD Basic + Slug
 Route::get('/slug', [HomeControllerSlug::class, 'index'])->name('slug.index');
