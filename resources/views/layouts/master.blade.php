@@ -28,7 +28,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('crudbasic.index')}}">CRUD Basic</a></li>
-                            <li><a class="dropdown-item" href="#">CRUD + Slug</a></li>
+                            <li><a class="dropdown-item" href="{{ route('slug.index')}}"">CRUD + Slug</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + IMAGE</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Searching</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Sorting</a></li>
