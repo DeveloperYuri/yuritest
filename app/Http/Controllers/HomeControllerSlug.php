@@ -40,8 +40,9 @@ class HomeControllerSlug extends Controller
     }
 
     public function update(Request $request, string $id){
-        $slug = Slug::find($id);
-        $slug->update([
+        $slug1 = Slug::find($id);
+        $slug = Str::of($request->judul)->slug('-');
+        $slug1->update([
             'judul' => $request->judul,
             'slug' => $slug,
             'isi' => $request->isi

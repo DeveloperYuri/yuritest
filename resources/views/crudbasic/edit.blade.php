@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <h1 class="text-center mt-2">Edit Produk</h1>
+
+        <a href="{{ route('crudbasic.index') }}" class="btn btn-success mb-3">Kembali</a>
+
         <form action="{{ route('crudbasic.update', $id->id) }}" method="POST">
             @method("PUT")
             @csrf

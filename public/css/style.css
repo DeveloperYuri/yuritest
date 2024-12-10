@@ -1,0 +1,8 @@
+h1{
+    font-family: "Winter";
+}
+
+@font-face {
+    font-family: "Winter";
+    src: url(../winter_minie/Winter\ Minie.ttf);
+}
