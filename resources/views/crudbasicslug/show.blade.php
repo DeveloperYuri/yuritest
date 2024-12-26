@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mt-5">Data Slug</h1>
+        <h1 class="mt-5 text-center">Show CRUD + Slug</h1>
         
         <a href="{{ route('slug.index') }}" class="btn btn-success mb-3">Kembali</a>
 
