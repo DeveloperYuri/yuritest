@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mt-5 text-center mb-4">Data Slug</h1>
+        <h1 class="mt-5 text-center mb-4">Data CRUD BASIC + Slug</h1>
         <table class="table">
             <thead>
                 <tr>
