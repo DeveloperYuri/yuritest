@@ -31,6 +31,7 @@
                             <li><a class="dropdown-item" href="{{ route('crudbasic.index') }}">CRUD Basic</a></li>
                             <li><a class="dropdown-item" href="{{ route('slug.index') }}">CRUD Basic + Slug</a></li>
                             <li><a class="dropdown-item" href="{{ route('crudimagebasic.index')}}">CRUD Basic + IMAGE</a></li>
+                            <li><a class="dropdown-item" href="{{ route('crudimagebasicslug.index')}}">CRUD Basic + IMAGE + Slug</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Searching</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Sorting</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Multiple Delete</a></li>

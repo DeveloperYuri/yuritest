@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeControllerSlug;
 use App\Http\Controllers\ProdukImageController;
+use App\Http\Controllers\ProdukImageSlugController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,3 +36,12 @@ Route::get('/crudimagebasic/{id}/edit', [ProdukImageController::class, 'edit'])-
 Route::put('/crudimagebasic/update/{id}', [ProdukImageController::class, 'update'])->name('crudimagebasic.update');
 Route::delete('/crudimagebasic/delete/{id}', [ProdukImageController::class, 'destroy'])->name('crudimagebasic.destroy');
 Route::get('/crudimagebasic/show/{id}', [ProdukImageController::class, 'show'])->name('crudimagebasic.show');
+
+// CRUD Basic + Image + Slug
+Route::get('/crudimagebasicslug', [ProdukImageSlugController::class, 'index'])->name('crudimagebasicslug.index');
+Route::get('/crudimagebasicslug/create', [ProdukImageSlugController::class, 'create'])->name('crudimagebasicslug.create');
+Route::post('/crudimagebasicslugpost', [ProdukImageSlugController::class, 'store'])->name('crudimagebasicslug.store');
+Route::get('/crudimagebasicslug/{id}/edit', [ProdukImageSlugController::class, 'edit'])->name('crudimagebasicslug.edit');
+Route::put('/crudimagebasicslug/update/{id}', [ProdukImageSlugController::class, 'update'])->name('crudimagebasicslug.update');
+Route::delete('/crudimagebasicslug/delete/{id}', [ProdukImageSlugController::class, 'destroy'])->name('crudimagebasicslug.destroy');
+Route::get('/crudimagebasicslug/show/{id}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
