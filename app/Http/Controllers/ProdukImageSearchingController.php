@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\ProdukImageSearching;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ProdukImageSearchingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request): View
     {
-        $produkimagesearching = ProdukImageSearching::all();
-
+        $produkimagesearching = ProdukImageSearching::search($request->search ?? '')->get();
+          
         return view('crudimagebasicsearching.index', compact('produkimagesearching'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeControllerSlug;
 use App\Http\Controllers\ProdukImageController;
 use App\Http\Controllers\ProdukImageSearchingController;
 use App\Http\Controllers\ProdukImageSlugController;
+use App\Http\Controllers\UserController;
 use App\Models\ProdukImageSearching;
 use Illuminate\Support\Facades\Route;
 
@@ -56,3 +57,6 @@ Route::get('/crudimagebasicsearching/{id}/edit', [ProdukImageSearchingController
 Route::put('/crudimagebasicsearching/update/{id}', [ProdukImageSearchingController::class, 'update'])->name('crudimagebasicsearching.update');
 Route::delete('/crudimagebasicsearching/delete/{id}', [ProdukImageSearchingController::class, 'destroy'])->name('crudimagebasicsearching.destroy');
 Route::get('/crudimagebasicsearching/show/{id}', [ProdukImageSearchingController::class, 'show'])->name('crudimagebasicsearching.show');
+
+// User
+Route::get('users', [UserController::class, 'index']);

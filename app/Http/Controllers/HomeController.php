@@ -8,10 +8,11 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
+
     public function index()
     {
-
         $produks = Produk::all();
+
         return view('crudbasic.index', compact('produks'));
     }
 

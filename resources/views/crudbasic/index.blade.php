@@ -5,7 +5,6 @@
         <h1 class="text-center mt-3 mb-4">CRUD BASIC</h1>
 
         <a class="btn btn btn-primary mb-3" href="{{ route('crudbasic.create')}}">Tambah Produk</a>
-
         <table class="table">
             <thead>
                 <tr>
