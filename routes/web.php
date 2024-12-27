@@ -3,7 +3,9 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeControllerSlug;
 use App\Http\Controllers\ProdukImageController;
+use App\Http\Controllers\ProdukImageSearchingController;
 use App\Http\Controllers\ProdukImageSlugController;
+use App\Models\ProdukImageSearching;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,3 +47,12 @@ Route::get('/crudimagebasicslug/{id}/edit', [ProdukImageSlugController::class, '
 Route::put('/crudimagebasicslug/update/{id}', [ProdukImageSlugController::class, 'update'])->name('crudimagebasicslug.update');
 Route::delete('/crudimagebasicslug/delete/{id}', [ProdukImageSlugController::class, 'destroy'])->name('crudimagebasicslug.destroy');
 Route::get('/crudimagebasicslug/show/{id}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
+
+// CRUD Basic + Image + Searcing
+Route::get('/crudimagebasicsearching', [ProdukImageSearchingController::class, 'index'])->name('crudimagebasicsearching.index');
+Route::get('/crudimagebasicsearching/create', [ProdukImageSearchingController::class, 'create'])->name('crudimagebasicsearching.create');
+Route::post('/crudimagebasicsearchingpost', [ProdukImageSearchingController::class, 'store'])->name('crudimagebasicsearching.store');
+Route::get('/crudimagebasicsearching/{id}/edit', [ProdukImageSearchingController::class, 'edit'])->name('crudimagebasicsearching.edit');
+Route::put('/crudimagebasicsearching/update/{id}', [ProdukImageSearchingController::class, 'update'])->name('crudimagebasicsearching.update');
+Route::delete('/crudimagebasicsearching/delete/{id}', [ProdukImageSearchingController::class, 'destroy'])->name('crudimagebasicsearching.destroy');
+Route::get('/crudimagebasicsearching/show/{id}', [ProdukImageSearchingController::class, 'show'])->name('crudimagebasicsearching.show');
