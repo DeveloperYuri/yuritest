@@ -4,12 +4,10 @@
     <div class="container">
         <h1 class="text-center mt-3">Tambah Produk CRUD Basic Full Component Input</h1>
 
-        <a class="btn btn btn-success mb-3" href="{{ route('crudimagebasic.index') }}">Kembali</a>
+        <a class="btn btn btn-success mb-3" href="{{ route('crudinputlengkap.index') }}">Kembali</a>
 
-        <form action="{{ route('crudimagebasicslug.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('crudinputlengkap.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama">

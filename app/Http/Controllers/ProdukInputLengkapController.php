@@ -13,7 +13,7 @@ class ProdukInputLengkapController extends Controller
     public function index()
     {
         $produkinputlengkap = ProdukInputLengkap::all();
-        
+
         return view('crudinputlengkap.index', compact('produkinputlengkap'));
     }
 
@@ -30,7 +30,14 @@ class ProdukInputLengkapController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //create product
+        ProdukInputLengkap::create([
+            'nama'          => $request->nama,
+            'deskripsi'     => $request->deskripsi,
+        ]);
+
+        //redirect to index
+        return redirect()->route('crudinputlengkap.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**

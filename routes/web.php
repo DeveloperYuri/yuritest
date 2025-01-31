@@ -66,3 +66,4 @@ Route::get('users', [UserController::class, 'index']);
 // CRUD Input Lengkap
 Route::get('/crudinputlengkap', [ProdukInputLengkapController::class, 'index'])->name('crudinputlengkap.index');
 Route::get('/crudinputlengkap/create', [ProdukInputLengkapController::class, 'create'])->name('crudinputlengkap.create');
+Route::post('/crudinputlengkap/post', [ProdukInputLengkapController::class, 'store'])->name('crudinputlengkap.store');
