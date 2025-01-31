@@ -14,8 +14,11 @@ class ProdukImageSearchingController extends Controller
      */
     public function index(Request $request): View
     {
-        $produkimagesearching = ProdukImageSearching::search($request->search ?? '')->get();
+        //$produkimagesearching = ProdukImageSearching::search($request->search ?? '')->get();
           
+        $produkimagesearching = ProdukImageSearching::count();
+
+        //dd($produkimagesearching);
         return view('crudimagebasicsearching.index', compact('produkimagesearching'));
     }
     

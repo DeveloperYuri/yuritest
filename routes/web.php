@@ -5,8 +5,10 @@ use App\Http\Controllers\HomeControllerSlug;
 use App\Http\Controllers\ProdukImageController;
 use App\Http\Controllers\ProdukImageSearchingController;
 use App\Http\Controllers\ProdukImageSlugController;
+use App\Http\Controllers\ProdukInputLengkapController;
 use App\Http\Controllers\UserController;
 use App\Models\ProdukImageSearching;
+use App\Models\ProdukInputLengkap;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -60,3 +62,7 @@ Route::get('/crudimagebasicsearching/show/{id}', [ProdukImageSearchingController
 
 // User
 Route::get('users', [UserController::class, 'index']);
+
+// CRUD Input Lengkap
+Route::get('/crudinputlengkap', [ProdukInputLengkapController::class, 'index'])->name('crudinputlengkap.index');
+Route::get('/crudinputlengkap/create', [ProdukInputLengkapController::class, 'create'])->name('crudinputlengkap.create');
