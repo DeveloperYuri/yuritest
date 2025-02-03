@@ -7,9 +7,6 @@
         <a href="{{ route('slug.index') }}" class="btn btn-success mb-3">Kembali</a>
 
         <div class="card">
-            <div class="card-header">
-                {{ $slug[0]->image }}
-            </div>
             <div class="card-body">
                 <p>{{ $slug[0]->description }}</p>
             </div>

@@ -49,7 +49,7 @@ Route::post('/crudimagebasicslugpost', [ProdukImageSlugController::class, 'store
 Route::get('/crudimagebasicslug/{id}/edit', [ProdukImageSlugController::class, 'edit'])->name('crudimagebasicslug.edit');
 Route::put('/crudimagebasicslug/update/{id}', [ProdukImageSlugController::class, 'update'])->name('crudimagebasicslug.update');
 Route::delete('/crudimagebasicslug/delete/{id}', [ProdukImageSlugController::class, 'destroy'])->name('crudimagebasicslug.destroy');
-Route::get('/crudimagebasicslug/show/{id}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
+Route::get('/crudimagebasicslug/show/{slug}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
 
 // CRUD Basic + Image + Searcing
 Route::get('/crudimagebasicsearching', [ProdukImageSearchingController::class, 'index'])->name('crudimagebasicsearching.index');

@@ -29,8 +29,8 @@ class HomeControllerSlug extends Controller
         return redirect()->route('slug.index');
     }
 
-    public function show(string $id){
-        $data['slug'] = Slug::where(['slug' => $id])->get();
+    public function show(string $slug){
+        $data['slug'] = Slug::where(['slug' => $slug])->get();
         return view('crudbasicslug.show', $data);
     }
 
