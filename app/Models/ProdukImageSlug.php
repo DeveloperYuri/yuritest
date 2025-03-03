@@ -19,4 +19,10 @@ class ProdukImageSlug extends Model
         'description',
         'slug'
     ];
+
+    static public function getSlug($slug){
+        return self::select('produk_image_slugs.*')
+        ->where('slug', '=', $slug)
+        ->first();
+    }
 }

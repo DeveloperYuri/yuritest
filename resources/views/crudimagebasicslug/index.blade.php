@@ -29,7 +29,7 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                 <a href="{{ route('crudimagebasicslug.edit', $p->id)}}" class="btn btn-warning">Ubah</a>
-                                <a href="{{ route('crudimagebasicslug.show', $p->id)}}" class="btn btn-info">Lihat</a>
+                                <a href="{{ route('crudimagebasicslug.show', $p->slug)}}" class="btn btn-info">Lihat</a>
                             </form>
                         </td>
                     </tr>
