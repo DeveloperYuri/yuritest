@@ -58,7 +58,7 @@ class ProdukImageSlugController extends Controller
         $data['getDescription'] = $article->description;
         $data['getImage'] = $article->image;
 
-        // dd($data);
+        // dd($article);
 
         return view('crudimagebasicslug.show', $data);
 

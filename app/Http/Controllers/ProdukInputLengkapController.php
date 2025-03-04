@@ -31,13 +31,16 @@ class ProdukInputLengkapController extends Controller
     public function store(Request $request)
     {
         //create product
-        ProdukInputLengkap::create([
+        $data = ProdukInputLengkap::create([
             'nama'          => $request->nama,
             'deskripsi'     => $request->deskripsi,
+            'category'     => $request->category,
         ]);
 
+        dd($data);
+
         //redirect to index
-        return redirect()->route('crudinputlengkap.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        // return redirect()->route('crudinputlengkap.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**

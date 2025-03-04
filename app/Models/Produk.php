@@ -12,7 +12,8 @@ class Produk extends Model
 
     protected $fillable = [
         'nama',
-        'deskripsi'
+        'deskripsi',
+        'category'
     ];
 
     public function toSearchableArray()

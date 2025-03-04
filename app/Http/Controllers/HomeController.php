@@ -21,11 +21,29 @@ class HomeController extends Controller
         return view('crudbasic.create');
     }
 
-    public function store(Request $request)
-    {
-        Produk::create($request->all());
+    // public function store(Request $request)
+    // {
+    //     Produk::create($request->all());
+    //     return redirect()->route('crudbasic.index');
+    // }
+
+    public function store(Request $request){
+
+        $save = new Produk;
+
+        $save->nama = trim($request->nama);
+        $save->deskripsi = trim($request->deskripsi);
+        $save->category = trim($request->category);
+        $save->date = date('Y-m-d H:i:s');
+        // $save->input_checkbox = trim($request->input_checkbox);
+
+
+        $save->save();
+
+        dd($save);
 
         return redirect()->route('crudbasic.index');
+
     }
 
     public function destroy(Produk $id)

@@ -11,6 +11,11 @@
                     <th scope="col" class="text-center">No</th>
                     <th scope="col" class="text-center">Nama</th>
                     <th scope="col" class="text-center">Deskripsi</th>
+                    <th scope="col" class="text-center">Category</th>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Radios</th>
+                    <th scope="col" class="text-center">Checkbox</th>
+                    <th scope="col" class="text-center">Text Area</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -20,6 +25,11 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-center">{{ $produk->nama }}</td>
+                        <td class="text-center">{{ $produk->deskripsi }}</td>
+                        <td class="text-center">{{ $produk->category }}</td>
+                        <td class="text-center">{{ date('d M Y', strtotime($produk->date))   }}</td>
+                        <td class="text-center">{{ $produk->deskripsi }}</td>
+                        <td class="text-center">{{ $produk->deskripsi }}</td>
                         <td class="text-center">{{ $produk->deskripsi }}</td>
 
                         <td class="text-center">
