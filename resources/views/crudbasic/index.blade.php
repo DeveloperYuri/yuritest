@@ -5,6 +5,7 @@
         <h1 class="text-center mt-3 mb-4">CRUD BASIC</h1>
 
         <a class="btn btn btn-primary mb-3" href="{{ route('crudbasic.create')}}">Tambah Produk</a>
+        @include('layouts._message')
         <table class="table">
             <thead>
                 <tr>
@@ -28,9 +29,9 @@
                         <td class="text-center">{{ $produk->deskripsi }}</td>
                         <td class="text-center">{{ $produk->category }}</td>
                         <td class="text-center">{{ date('d M Y', strtotime($produk->date))   }}</td>
-                        <td class="text-center">{{ $produk->deskripsi }}</td>
-                        <td class="text-center">{{ $produk->deskripsi }}</td>
-                        <td class="text-center">{{ $produk->deskripsi }}</td>
+                        <td class="text-center">{{ $produk->input_radio }}</td>
+                        <td class="text-center">{{ $produk->input_checkbox }}</td>
+                        <td class="text-center">{{ $produk->input_textarea }}</td>
 
                         <td class="text-center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"

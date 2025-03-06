@@ -35,44 +35,27 @@
                 </div>
             </div>
 
-            <fieldset class="form-group mb-3">
-                <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                    <div class="col-sm-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                                value="option1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                                First radio
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Second radio
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
-                                value="option3" disabled>
-                            <label class="form-check-label" for="gridRadios3">
-                                Third disabled radio
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
+            <div>
+                <h4>Users Skill</h4>
+                <input type="checkbox" name="input_checkbox" value="php"><label for="">PHP</label>
+                <input type="checkbox" name="input_checkbox" value="java"><label for="">Java</label>
+                <input type="checkbox" name="input_checkbox" value="python"><label for="">Python</label>
+            </div>
 
-            <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1" value='1' name="checkbox">Check this custom checkbox</label>
+            <div>
+                <h4>Radio Button</h4>
+                <input type="radio" name="input_radio" value="yes"><label for="">Yes</label>
+                <input type="radio" name="input_radio" value="no"><label for="">No</label>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="input_textarea"></textarea>
             </div>
+
+            {{-- @foreach ($errors->all() as $error)
+                <li style="color: red">{{ $error }}</li>
+            @endforeach --}}
 
 
 

@@ -29,20 +29,26 @@ class HomeController extends Controller
 
     public function store(Request $request){
 
+        $request->validate([
+            'nama'   => 'required|min:10',
+            'deskripsi'   => 'required|min:10',
+        ]);
+
+
         $save = new Produk;
 
         $save->nama = trim($request->nama);
         $save->deskripsi = trim($request->deskripsi);
         $save->category = trim($request->category);
         $save->date = date('Y-m-d H:i:s');
-        // $save->input_checkbox = trim($request->input_checkbox);
-
+        $save->input_checkbox = trim($request->input_checkbox);
+        $save->input_radio = trim($request->input_radio);
+        $save->input_textarea = trim($request->input_textarea);
 
         $save->save();
+        // dd($save);
 
-        dd($save);
-
-        return redirect()->route('crudbasic.index');
+        return redirect('/crud')->with('success', 'Insert Successfully');
 
     }
 
@@ -55,8 +61,8 @@ class HomeController extends Controller
 
     public function edit(Produk $id)
     {
-        //
-        return view('crudbasic.edit', compact('id'));
+        $data['getRecord'] = Produk::findOrFail($id);
+        return view('crudbasic.edit', $data);
     }
     
     public function update(Request $request, string $id){
