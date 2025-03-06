@@ -72,6 +72,8 @@ class HomeController extends Controller
             'nama'         => $request->nama,
             'deskripsi'   => $request->deskripsi
         ]);
+
+        // fsafsa
  
         return redirect()->route('crudbasic.index');
     }
