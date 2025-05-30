@@ -17,9 +17,6 @@ class AuthController extends Controller
 
     public function store(Request $request)
     {
-
-        // echo "MASUK SINI";
-
         $user = request()->validate([
             'email' => 'required|unique:users',
             'password' => 'required|min:6',
@@ -48,7 +45,7 @@ class AuthController extends Controller
         // dd($request->only('email', 'password'));
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            echo "Benar";
+            return redirect()->route('crudbasic.index');
         } 
         else {
             return redirect()->back()->with('error', 'Please enter the correct credentials');
@@ -59,6 +56,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('indexlogin');
     }
 }

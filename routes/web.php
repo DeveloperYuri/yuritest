@@ -14,13 +14,23 @@ use App\Models\ProdukInputLengkap;
 use Illuminate\Support\Facades\Route;
 
 //CRUD Basic
-Route::get('/crud', [HomeController::class, 'index'])->name('crudbasic.index');
-Route::get('/crudcreate', [HomeController::class, 'create'])->name('crudbasic.create');
-Route::post('/storesave', [HomeController::class, 'store'])->name('crudbasic.store');
-Route::delete('/produk/delete{id}', [HomeController::class, 'destroy'])->name('crudbasic.destroy');
-Route::get('/produk/edit{id}', [HomeController::class, 'edit'])->name('crudbasic.edit');
-Route::put('/produk/update{id}', [HomeController::class, 'update'])->name('crudbasic.update');
-Route::get('/produk/show/{id}', [HomeController::class, 'show'])->name('crudbasic.show');
+// Route::get('/crud', [HomeController::class, 'index'])->name('crudbasic.index');
+// Route::get('/crudcreate', [HomeController::class, 'create'])->name('crudbasic.create');
+// Route::post('/storesave', [HomeController::class, 'store'])->name('crudbasic.store');
+// Route::delete('/produk/delete{id}', [HomeController::class, 'destroy'])->name('crudbasic.destroy');
+// Route::get('/produk/edit{id}', [HomeController::class, 'edit'])->name('crudbasic.edit');
+// Route::put('/produk/update{id}', [HomeController::class, 'update'])->name('crudbasic.update');
+// Route::get('/produk/show/{id}', [HomeController::class, 'show'])->name('crudbasic.show');
+
+Route::group(['middleware' => 'login'], function () {
+    Route::get('/crud', [HomeController::class, 'index'])->name('crudbasic.index');
+    Route::get('/crudcreate', [HomeController::class, 'create'])->name('crudbasic.create');
+    Route::post('/storesave', [HomeController::class, 'store'])->name('crudbasic.store');
+    Route::delete('/produk/delete{id}', [HomeController::class, 'destroy'])->name('crudbasic.destroy');
+    Route::get('/produk/edit{id}', [HomeController::class, 'edit'])->name('crudbasic.edit');
+    Route::put('/produk/update{id}', [HomeController::class, 'update'])->name('crudbasic.update');
+    Route::get('/produk/show/{id}', [HomeController::class, 'show'])->name('crudbasic.show');
+});
 
 //CRUD Basic Searching
 Route::get('/crudsearching', [HomeSearchingController::class, 'index'])->name('crudbasicsearching.index');
@@ -75,6 +85,6 @@ Route::get('/', [AuthController::class, 'login'])->name('indexlogin');
 Route::post('/loginpost', [AuthController::class, 'loginpost'])->name('loginpost');
 Route::get('/registration', [AuthController::class, 'register'])->name('indexregister');
 Route::post('/registrationpost', [AuthController::class, 'store'])->name('registerpost');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [AuthController::class, 'index'])->name('indexdashboard');
-

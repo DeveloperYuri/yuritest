@@ -50,6 +50,8 @@
                     </li>
 
                 </ul>
+
+                <a href="{{ route('logout')}}" class="btn btn-success">Logout</a>
             </div>
         </div>
     </nav>
