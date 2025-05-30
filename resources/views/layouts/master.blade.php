@@ -29,6 +29,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('crudbasic.index') }}">CRUD Basic</a></li>
+                            <li><a class="dropdown-item" href="{{ route('crudbasic.index') }}">CRUD Basic + Searching</a></li>
                             <li><a class="dropdown-item" href="{{ route('slug.index') }}">CRUD Basic + Slug</a></li>
                             <li><a class="dropdown-item" href="{{ route('slug.index') }}">CRUD Basic + Slug +
                                     Searching</a></li>
@@ -36,7 +37,7 @@
                                     IMAGE</a></li>
                             <li><a class="dropdown-item" href="{{ route('crudimagebasicslug.index') }}">CRUD Basic +
                                     IMAGE + Slug</a></li>
-                            <li><a class="dropdown-item" href="{{ route('crudimagebasicsearching.index') }}">CRUD Basic
+                            <li><a class="dropdown-item" href="#">CRUD Basic
                                     + IMAGE + Searching</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Sorting</a></li>
                             <li><a class="dropdown-item" href="#">CRUD + Multiple Delete</a></li>

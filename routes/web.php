@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeControllerSlug;
+use App\Http\Controllers\HomeSearchingController;
 use App\Http\Controllers\ProdukImageController;
 use App\Http\Controllers\ProdukImageSearchingController;
 use App\Http\Controllers\ProdukImageSlugController;
@@ -11,10 +13,6 @@ use App\Models\ProdukImageSearching;
 use App\Models\ProdukInputLengkap;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //CRUD Basic
 Route::get('/crud', [HomeController::class, 'index'])->name('crudbasic.index');
 Route::get('/crudcreate', [HomeController::class, 'create'])->name('crudbasic.create');
@@ -23,6 +21,9 @@ Route::delete('/produk/delete{id}', [HomeController::class, 'destroy'])->name('c
 Route::get('/produk/edit{id}', [HomeController::class, 'edit'])->name('crudbasic.edit');
 Route::put('/produk/update{id}', [HomeController::class, 'update'])->name('crudbasic.update');
 Route::get('/produk/show/{id}', [HomeController::class, 'show'])->name('crudbasic.show');
+
+//CRUD Basic Searching
+Route::get('/crudsearching', [HomeSearchingController::class, 'index'])->name('crudbasicsearching.index');
 
 //CRUD Basic + Slug
 Route::get('/slug', [HomeControllerSlug::class, 'index'])->name('slug.index');
@@ -49,7 +50,7 @@ Route::post('/crudimagebasicslugpost', [ProdukImageSlugController::class, 'store
 Route::get('/crudimagebasicslug/{id}/edit', [ProdukImageSlugController::class, 'edit'])->name('crudimagebasicslug.edit');
 Route::put('/crudimagebasicslug/update/{id}', [ProdukImageSlugController::class, 'update'])->name('crudimagebasicslug.update');
 Route::delete('/crudimagebasicslug/delete/{id}', [ProdukImageSlugController::class, 'destroy'])->name('crudimagebasicslug.destroy');
-Route::get('/{slug}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
+// Route::get('/{slug}', [ProdukImageSlugController::class, 'show'])->name('crudimagebasicslug.show');
 
 // CRUD Basic + Image + Searcing
 Route::get('/crudimagebasicsearching', [ProdukImageSearchingController::class, 'index'])->name('crudimagebasicsearching.index');
@@ -58,7 +59,7 @@ Route::post('/crudimagebasicsearchingpost', [ProdukImageSearchingController::cla
 Route::get('/crudimagebasicsearching/{id}/edit', [ProdukImageSearchingController::class, 'edit'])->name('crudimagebasicsearching.edit');
 Route::put('/crudimagebasicsearching/update/{id}', [ProdukImageSearchingController::class, 'update'])->name('crudimagebasicsearching.update');
 Route::delete('/crudimagebasicsearching/delete/{id}', [ProdukImageSearchingController::class, 'destroy'])->name('crudimagebasicsearching.destroy');
-Route::get('/crudimagebasicsearching/show/{id}', [ProdukImageSearchingController::class, 'show'])->name('crudimagebasicsearching.show');
+// Route::get('/crudimagebasicsearching/show/{id}', [ProdukImageSearchingController::class, 'show'])->name('crudimagebasicsearching.show');
 
 // User
 Route::get('users', [UserController::class, 'index']);
@@ -67,3 +68,13 @@ Route::get('users', [UserController::class, 'index']);
 Route::get('/crudinputlengkap', [ProdukInputLengkapController::class, 'index'])->name('crudinputlengkap.index');
 Route::get('/crudinputlengkap/create', [ProdukInputLengkapController::class, 'create'])->name('crudinputlengkap.create');
 Route::post('/crudinputlengkap/post', [ProdukInputLengkapController::class, 'store'])->name('crudinputlengkap.store');
+
+
+// Login Register
+Route::get('/', [AuthController::class, 'login'])->name('indexlogin');
+Route::post('/loginpost', [AuthController::class, 'loginpost'])->name('loginpost');
+Route::get('/registration', [AuthController::class, 'register'])->name('indexregister');
+Route::post('/registrationpost', [AuthController::class, 'store'])->name('registerpost');
+
+Route::get('/dashboard', [AuthController::class, 'index'])->name('indexdashboard');
+

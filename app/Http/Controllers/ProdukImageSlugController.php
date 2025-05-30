@@ -51,18 +51,18 @@ class ProdukImageSlugController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($slug)
-    {
-        $article = ProdukImageSlug::where('slug', $slug)->first();
+    // public function show($slug)
+    // {
+    //     $article = ProdukImageSlug::where('slug', $slug)->first();
 
-        $data['getDescription'] = $article->description;
-        $data['getImage'] = $article->image;
+    //     $data['getDescription'] = $article->description;
+    //     $data['getImage'] = $article->image;
 
-        // dd($article);
+    //     // dd($article);
 
-        return view('crudimagebasicslug.show', $data);
+    //     return view('crudimagebasicslug.show', $data);
 
-    }
+    // }
 
     /**
      * Show the form for editing the specified resource.
